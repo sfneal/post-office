@@ -18,7 +18,6 @@
     "require": {
         "php": "^7.1",
         "illuminate/support": "^7.25",
-        "sfneal/actions": "^0.1.2",
         "sfneal/queueables": "^0.1.0"
     },
     "require-dev": {

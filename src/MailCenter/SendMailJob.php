@@ -3,9 +3,10 @@
 namespace Sfneal\PostOffice\MailCenter;
 
 use Illuminate\Mail\Mailable;
+use Illuminate\Support\Facades\Mail;
 use Sfneal\Queueables\AbstractJob;
 
-// TODO: create package SendMail?
+
 class SendMailJob extends AbstractJob
 {
     /**
@@ -54,8 +55,30 @@ class SendMailJob extends AbstractJob
      */
     public function handle()
     {
-        if (!SendMailAction::execute($this->mailable, $this->to, $this->cc)) {
+        if (!$this->send()) {
             $this->fail();
         }
+    }
+
+    /**
+     * Send a Mailable to an email recipient with optional CC recipients
+     *
+     * @return bool
+     */
+    private function send()
+    {
+        // Initialize
+        $mail = Mail::to($this->to);
+
+        // CC users if provided
+        if (isset($this->cc)) {
+            $mail->cc($this->cc);
+        }
+
+        // Send mail
+        $mail->send($this->mailable);
+
+        // Confirm Email was sent
+        return empty(Mail::failures());
     }
 }

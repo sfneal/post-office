@@ -1,13 +1,11 @@
 <?php
 
-
 namespace Sfneal\PostOffice\Mailables\Interfaces;
-
 
 interface CallToAction
 {
     /**
-     * Call to Action button in the body of the email
+     * Call to Action button in the body of the email.
      *
      * @return array
      */

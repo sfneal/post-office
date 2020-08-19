@@ -54,7 +54,7 @@ class SendMailJob extends AbstractJob
      */
     public function handle()
     {
-        if (!SendMailAction::execute($this->mailable, $this->to, $this->cc)) {
+        if (! SendMailAction::execute($this->mailable, $this->to, $this->cc)) {
             $this->fail();
         }
     }

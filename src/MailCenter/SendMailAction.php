@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Sfneal\PostOffice\MailCenter;
-
 
 use Illuminate\Mail\Mailable;
 use Illuminate\Support\Facades\Mail;
@@ -11,7 +9,7 @@ use Sfneal\Actions\AbstractActionStatic;
 class SendMailAction extends AbstractActionStatic
 {
     /**
-     * Execute the SendMailAction
+     * Execute the SendMailAction.
      *
      * @param Mailable $mailable
      * @param string $to

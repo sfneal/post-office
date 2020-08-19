@@ -1,13 +1,11 @@
 <?php
 
-
 namespace Sfneal\PostOffice\Mailables\Interfaces;
-
 
 interface Title
 {
     /**
-     * Retrieve the Mailable's subject/title
+     * Retrieve the Mailable's subject/title.
      *
      * @return string
      */

@@ -1,6 +1,6 @@
 <?php
 
-namespace Sfneal\PostOffice\Tests;
+namespace Sfneal\PhpPackageBoilerplate\Tests;
 
 use PHPUnit\Framework\TestCase;
 

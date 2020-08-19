@@ -1,11 +1,11 @@
 {
-    "name": "sfneal/PostOffice",
+    "name": "sfneal/php-package-boilerplate",
     "description": "Boilerplate for PHP package repo's",
     "keywords": [
         "sfneal",
-        "PostOffice"
+        "php-package-boilerplate"
     ],
-    "homepage": "https://github.com/sfneal/PostOffice",
+    "homepage": "https://github.com/sfneal/php-package-boilerplate",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -23,12 +23,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Sfneal\\PostOffice\\": "src"
+            "Sfneal\\PhpPackageBoilerplate\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Sfneal\\PostOffice\\Tests\\": "tests"
+            "Sfneal\\PhpPackageBoilerplate\\Tests\\": "tests"
         }
     },
     "scripts": {

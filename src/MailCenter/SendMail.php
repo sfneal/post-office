@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Mail;
 use Sfneal\Queueables\AbstractJob;
 
 
-class SendMailJob extends AbstractJob
+class SendMail extends AbstractJob
 {
     /**
      * @var string Queue to use

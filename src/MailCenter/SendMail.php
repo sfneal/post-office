@@ -6,7 +6,6 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Support\Facades\Mail;
 use Sfneal\Queueables\AbstractJob;
 
-
 class SendMail extends AbstractJob
 {
     /**
@@ -55,13 +54,13 @@ class SendMail extends AbstractJob
      */
     public function handle()
     {
-        if (!$this->send()) {
+        if (! $this->send()) {
             $this->fail();
         }
     }
 
     /**
-     * Send a Mailable to an email recipient with optional CC recipients
+     * Send a Mailable to an email recipient with optional CC recipients.
      *
      * @return bool
      */

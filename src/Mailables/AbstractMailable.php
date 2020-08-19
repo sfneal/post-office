@@ -1,12 +1,10 @@
 <?php
 
-
 namespace Sfneal\PostOffice\Mailables;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable as BaseMailable;
 use Illuminate\Queue\SerializesModels;
-
 
 abstract class AbstractMailable extends BaseMailable
 {

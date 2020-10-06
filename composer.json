@@ -21,7 +21,7 @@
         "sfneal/queueables": ">=0.1.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^7.0"
+        "phpunit/phpunit": ">=4.8.36"
     },
     "autoload": {
         "psr-4": {

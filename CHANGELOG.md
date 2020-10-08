@@ -21,3 +21,7 @@ All notable changes to `post-office` will be documented in this file
  
  ## 0.3.1 - 2020-10-07
  - fix phpunit version requirement
+ 
+ 
+ ## 0.4.0 - 2020-10-08
+ - add support for php 8

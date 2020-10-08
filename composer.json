@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "php": "^7.0",
+        "php": ">=7.0",
         "illuminate/support": "*",
         "sfneal/queueables": ">=0.1.0"
     },

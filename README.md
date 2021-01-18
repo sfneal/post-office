@@ -1,7 +1,8 @@
 # Post Office
 
+[![Packagist PHP support](https://img.shields.io/packagist/php-v/sfneal/post-office)](https://packagist.org/packages/sfneal/post-office)
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/sfneal/post-office.svg?style=flat-square)](https://packagist.org/packages/sfneal/post-office)
-[![Build Status](https://img.shields.io/travis/sfneal/post-office/master.svg?style=flat-square)](https://travis-ci.org/sfneal/post-office)
+[![Build Status](https://travis-ci.com/sfneal/post-office.svg?branch=master&style=flat-square)](https://travis-ci.com/sfneal/post-office)
 [![Quality Score](https://img.shields.io/scrutinizer/g/sfneal/post-office.svg?style=flat-square)](https://scrutinizer-ci.com/g/sfneal/post-office)
 [![Total Downloads](https://img.shields.io/packagist/dt/sfneal/post-office.svg?style=flat-square)](https://packagist.org/packages/sfneal/post-office)
 

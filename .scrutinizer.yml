@@ -19,9 +19,14 @@ checks:
 
 build:
     environment:
-        php: 7.4.8
+        php: 8.0.1
     nodes:
         analysis:
             tests:
                 override:
-                    - php-scrutinizer-run
+                    - command: php-scrutinizer-run
+                    - command: 'composer test'
+                      coverage:
+                          file: phpunit.xml.dist
+                          format: clover
+

@@ -30,3 +30,7 @@ All notable changes to `post-office` will be documented in this file
 ## 0.4.1 - 2020-12-11
 - fix issues with php8 compatibility
 - optimize Travis CI config
+
+
+## 0.5.0 - 2021-02-01
+- bump min sfneal/queueables package version to 1.0

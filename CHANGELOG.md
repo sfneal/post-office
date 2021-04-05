@@ -34,3 +34,7 @@ All notable changes to `post-office` will be documented in this file
 
 ## 0.5.0 - 2021-02-01
 - bump min sfneal/queueables package version to 1.0
+
+
+## 0.5.1 - 2021-04-05
+- fix sfneal/queueables version constraint (^1.0)

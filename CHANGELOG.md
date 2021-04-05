@@ -38,3 +38,8 @@ All notable changes to `post-office` will be documented in this file
 
 ## 0.5.1 - 2021-04-05
 - fix sfneal/queueables version constraint (^1.0)
+
+
+## 0.6.0 - 2021-04-05
+- cut support for php 7.0
+- bump min sfneal/queueables version to ^2.0

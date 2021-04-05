@@ -4,9 +4,9 @@ namespace Sfneal\PostOffice\MailCenter;
 
 use Illuminate\Mail\Mailable;
 use Illuminate\Support\Facades\Mail;
-use Sfneal\Queueables\AbstractJob;
+use Sfneal\Queueables\Job;
 
-class SendMail extends AbstractJob
+class SendMail extends Job
 {
     /**
      * @var string Queue to use

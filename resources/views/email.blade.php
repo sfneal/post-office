@@ -24,7 +24,7 @@
                                         @endforeach
 
                                         {{-- Call to action --}}
-                                        @include('post-office::assets.call-to-action', $call_to_action)
+                                        @includeWhen(! is_null($call_to_action), 'post-office::assets.call-to-action', $call_to_action)
                                     </td>
                                 </tr>
                             </table>

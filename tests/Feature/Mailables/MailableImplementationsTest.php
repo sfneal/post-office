@@ -17,6 +17,11 @@ class MailableImplementationsTest extends TestCase
     private $user;
 
     /**
+     * @var int
+     */
+    private $invoice_id;
+
+    /**
      * @var InvoiceUnpaidMailable
      */
     private $mailable;
@@ -31,8 +36,8 @@ class MailableImplementationsTest extends TestCase
         parent::setUp();
 
         $this->user = User::factory()->create();
-
-        $this->mailable = new InvoiceUnpaidMailable($this->user, rand(1, 999));
+        $this->invoice_id = rand(1, 999);
+        $this->mailable = new InvoiceUnpaidMailable($this->user, $this->invoice_id);
     }
 
     /** @test */
@@ -41,5 +46,44 @@ class MailableImplementationsTest extends TestCase
         $this->assertNotNull($this->mailable);
         $this->assertInstanceOf(AbstractMailable::class, $this->mailable);
         $this->assertInstanceOf(InvoiceUnpaidMailable::class, $this->mailable);
+    }
+
+    /** @test */
+    public function mailable_has_greeting()
+    {
+        $this->assertTrue(method_exists($this->mailable, 'getGreeting'));
+        $this->mailable->assertSeeInHtml("Hello {$this->user->first_name}");
+    }
+
+    /** @test */
+    public function mailable_has_email()
+    {
+        $this->assertTrue(method_exists($this->mailable, 'getEmail'));
+        $this->assertSame($this->user->email, $this->mailable->email);
+    }
+
+    /** @test */
+    public function mailable_has_title()
+    {
+        $title = "Unpaid Invoice: #{$this->invoice_id}";
+        $this->assertTrue(method_exists($this->mailable, 'getTitle'));
+        $this->mailable->assertSeeInHtml($title);
+        $this->assertSame($title, $this->mailable->subject);
+    }
+
+    /** @test */
+    public function mailable_has_message()
+    {
+        $this->assertTrue(method_exists($this->mailable, 'getMessages'));
+        $this->mailable->assertSeeInHtml(htmlentities('You have one or more unpaid invoices.  Please send use money asap!', ENT_QUOTES));
+        $this->mailable->assertSeeInHtml(htmlentities("If your invoice is not paid within 30 days we're going to send a team of ninja's to your last known location.", ENT_QUOTES));
+    }
+
+    /** @test */
+    public function mailable_has_call_to_action()
+    {
+        $this->assertTrue(method_exists($this->mailable, 'getCallToAction'));
+        $this->mailable->assertSeeInHtml("https://google.com");
+        $this->mailable->assertSeeInHtml('Pay Invoice');
     }
 }

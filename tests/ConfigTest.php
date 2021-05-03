@@ -1,10 +1,10 @@
 <?php
 
-namespace Sfneal\PostOffice\Tests\Feature;
+namespace Sfneal\PostOffice\Tests;
 
 use Sfneal\PostOffice\Tests\TestCase;
 
-class ViewsTest extends TestCase
+class ConfigTest extends TestCase
 {
     // todo: add test methods
 }

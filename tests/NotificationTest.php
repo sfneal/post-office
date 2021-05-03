@@ -2,13 +2,9 @@
 
 namespace Sfneal\PostOffice\Tests;
 
-use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Notification;
-use Sfneal\PostOffice\Mailables\AbstractMailable;
 use Sfneal\PostOffice\Notifications\AbstractNotification;
-use Sfneal\PostOffice\Tests\Assets\InvoiceUnpaidMailable;
 use Sfneal\PostOffice\Tests\Assets\InvoiceUnpaidNotification;
-use Sfneal\PostOffice\Tests\TestCase;
 use Sfneal\Users\Models\User;
 
 class NotificationTest extends TestCase

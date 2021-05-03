@@ -4,7 +4,6 @@ namespace Sfneal\PostOffice\Tests;
 
 use Sfneal\PostOffice\Mailables\AbstractMailable;
 use Sfneal\PostOffice\Tests\Assets\InvoiceUnpaidMailable;
-use Sfneal\PostOffice\Tests\TestCase;
 use Sfneal\Users\Models\User;
 
 class MailableTest extends TestCase

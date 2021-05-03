@@ -4,8 +4,6 @@
 namespace Sfneal\PostOffice\Tests\Assets;
 
 
-use Illuminate\Notifications\Messages\MailMessage;
-use Sfneal\PostOffice\Mailables\AbstractMailable;
 use Sfneal\PostOffice\Notifications\AbstractNotification;
 use Sfneal\Users\Models\User;
 

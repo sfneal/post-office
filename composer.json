@@ -21,6 +21,7 @@
         "sfneal/queueables": "^2.0"
     },
     "require-dev": {
+        "orchestra/testbench": ">=6.7.1",
         "phpunit/phpunit": ">=6.5.14",
         "scrutinizer/ocular": "^1.8"
     },

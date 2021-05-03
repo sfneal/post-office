@@ -8,6 +8,7 @@ use Illuminate\Queue\SerializesModels;
 
 abstract class AbstractMailable extends BaseMailable
 {
+    // todo: refactor to allow interfaces to set properties without passing to constructor
     use Queueable, SerializesModels;
 
     /**

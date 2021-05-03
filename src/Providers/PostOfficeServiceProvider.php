@@ -19,11 +19,11 @@ class PostOfficeServiceProvider extends ServiceProvider
         ], 'config');
 
         // Load Views
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'post-office');
+        $this->loadViewsFrom(__DIR__.'/../../resources/views', 'post-office');
 
         // Publish Views
         $this->publishes([
-            __DIR__.'/../resources/views' => resource_path('views/vendor/post-office'),
+            __DIR__.'/../resources/views' => resource_path('views/vendor/sfneal/post-office'),
         ], 'views');
     }
 

@@ -1,6 +1,6 @@
 <!doctype html>
 <html>
-@include('post-office.assets.header')
+@include('post-office::assets.header')
 
 <body class="">
 <span class="preheader">{{ implode('  ', $messages) }}</span>
@@ -24,7 +24,7 @@
                                         @endforeach
 
                                         {{-- Call to action --}}
-                                        @include('post-office.assets.call-to-action', $call_to_action)
+                                        @include('post-office::assets.call-to-action', $call_to_action)
                                     </td>
                                 </tr>
                             </table>

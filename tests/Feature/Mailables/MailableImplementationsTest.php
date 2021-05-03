@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Sfneal\PostOffice\Tests\Feature\Mailables;
-
 
 use Sfneal\PostOffice\Mailables\AbstractMailable;
 use Sfneal\PostOffice\Tests\Assets\InvoiceUnpaidMailable;
@@ -83,7 +81,7 @@ class MailableImplementationsTest extends TestCase
     public function mailable_has_call_to_action()
     {
         $this->assertTrue(method_exists($this->mailable, 'getCallToAction'));
-        $this->mailable->assertSeeInHtml("https://google.com");
+        $this->mailable->assertSeeInHtml('https://google.com');
         $this->mailable->assertSeeInHtml('Pay Invoice');
     }
 }

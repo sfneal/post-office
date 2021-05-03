@@ -15,6 +15,7 @@
             "role": "Developer"
         }
     ],
+    "version": "0.7.0",
     "require": {
         "php": ">=7.1",
         "illuminate/support": "*",

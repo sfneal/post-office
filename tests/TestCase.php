@@ -2,7 +2,6 @@
 
 namespace Sfneal\PostOffice\Tests;
 
-
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Sfneal\PostOffice\Providers\PostOfficeServiceProvider;

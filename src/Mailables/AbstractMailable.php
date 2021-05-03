@@ -65,6 +65,7 @@ abstract class AbstractMailable extends BaseMailable
         $this->call_to_action = $call_to_action ?? $this->call_to_action;
         $this->view = $view ?? $this->view;
 
+        // todo: use config values
         $this->onQueue('mail');
         $this->onConnection('database');
     }

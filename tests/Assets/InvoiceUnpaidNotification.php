@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Sfneal\PostOffice\Tests\Assets;
-
 
 use Sfneal\PostOffice\Notifications\AbstractNotification;
 use Sfneal\Users\Models\User;

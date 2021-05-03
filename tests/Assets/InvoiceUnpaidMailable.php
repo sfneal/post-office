@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Sfneal\PostOffice\Tests\Assets;
-
 
 use Sfneal\PostOffice\Mailables\AbstractMailable;
 use Sfneal\PostOffice\Mailables\Interfaces\CallToAction;
@@ -70,7 +68,7 @@ class InvoiceUnpaidMailable extends AbstractMailable implements Greeting, Email,
     {
         return [
             'You have one or more unpaid invoices.  Please send use money asap!',
-            "If your invoice is not paid within 30 days we're going to send a team of ninja's to your last known location."
+            "If your invoice is not paid within 30 days we're going to send a team of ninja's to your last known location.",
         ];
     }
 
@@ -82,7 +80,7 @@ class InvoiceUnpaidMailable extends AbstractMailable implements Greeting, Email,
     public function getCallToAction(): array
     {
         return [
-            'url' => "https://google.com",
+            'url' => 'https://google.com',
             'text' => 'Pay Invoice',
         ];
     }

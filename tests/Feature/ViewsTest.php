@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Sfneal\PostOffice\Tests\Feature;
-
 
 use Sfneal\PostOffice\Tests\TestCase;
 

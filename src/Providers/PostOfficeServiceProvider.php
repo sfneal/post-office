@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Sfneal\PostOffice\Providers;
-
 
 use Illuminate\Support\ServiceProvider;
 

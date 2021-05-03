@@ -52,7 +52,7 @@ class MailableImplementationsTest extends TestCase
     public function mailable_has_greeting()
     {
         $this->assertTrue(method_exists($this->mailable, 'getGreeting'));
-        $this->mailable->assertSeeInHtml("Hello {$this->user->first_name}");
+        $this->mailable->assertSeeInHtml("Hi {$this->user->first_name}");
     }
 
     /** @test */

@@ -10,10 +10,13 @@ use Sfneal\PostOffice\Mailables\Interfaces\Email;
 use Sfneal\PostOffice\Mailables\Interfaces\Greeting;
 use Sfneal\PostOffice\Mailables\Interfaces\Message;
 use Sfneal\PostOffice\Mailables\Interfaces\Title;
+use Sfneal\PostOffice\Mailables\Traits\UserMailable;
 use Sfneal\Users\Models\User;
 
 class InvoiceUnpaidMailable extends AbstractMailable implements Greeting, Email, Title, Message, CallToAction
 {
+    use UserMailable;
+
     /**
      * @var string View blade to use for mailable content
      */
@@ -46,26 +49,6 @@ class InvoiceUnpaidMailable extends AbstractMailable implements Greeting, Email,
             $this->getMessages(),
             $this->getCallToAction()
         );
-    }
-
-    /**
-     * Retrieve a string with the greeting line of the mailable.
-     *
-     * @return string
-     */
-    public function getGreeting(): string
-    {
-        return "Hello {$this->user->first_name}";
-    }
-
-    /**
-     * Retrieve the recipients email address.
-     *
-     * @return string
-     */
-    public function getEmail(): string
-    {
-        return $this->user->email;
     }
 
     /**

@@ -5,6 +5,7 @@ namespace Sfneal\PostOffice\Tests;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Sfneal\PostOffice\Providers\PostOfficeServiceProvider;
+use Sfneal\Users\Providers\UsersServiceProvider;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {
@@ -20,6 +21,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
     {
         return [
             PostOfficeServiceProvider::class,
+            UsersServiceProvider::class,
         ];
     }
 
@@ -31,8 +33,11 @@ class TestCase extends \Orchestra\Testbench\TestCase
      */
     protected function getEnvironmentSetUp($app)
     {
-
         // Set config values
         $app['config']->set('app.debug', true);
+
+        // Migrate 'user' table
+        include_once __DIR__.'/../vendor/sfneal/users/database/migrations/create_user_table.php.stub';
+        (new \CreateUserTable())->up();
     }
 }

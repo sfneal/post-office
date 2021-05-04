@@ -36,6 +36,7 @@
 
                 {{-- Footer --}}
                 {{-- todo: add conditional --}}
+                {{-- todo: config value for unsubscribe route --}}
                 <div class="footer">
                     <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                         <tr>

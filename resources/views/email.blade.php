@@ -16,7 +16,9 @@
                                 <tr>
                                     <td>
                                         {{-- Greeting --}}
-                                        <p>{{ $greeting  }},</p>
+                                        @isset($greeting)
+                                            <p>{{ $greeting  }},</p>
+                                        @endisset
 
                                         {{-- Messages --}}
                                         @foreach($messages as $message)

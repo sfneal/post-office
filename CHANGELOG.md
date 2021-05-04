@@ -58,3 +58,8 @@ All notable changes to `post-office` will be documented in this file
 - add 'queue' & 'driver' keys to post-office config
 - add use of 'post-office.queue' & 'post-office.driver' queue values 
 - fix `PostOfficeServiceProvider` view publishing paths
+
+
+## 0.7.2 - 2021-05-04
+- add 'post-office.mailables.view' config key for declaring a default mailables view
+- add `AbstractMailable::setView()` method for setting the $view property

@@ -24,4 +24,19 @@ return [
     |
     */
     'driver' => env('POST_OFFICE_QUEUE_DRIVER', config('queue.default')),
+
+    'mailables' => [
+        /*
+        |--------------------------------------------------------------------------
+        | PostOffice Mailable view
+        |--------------------------------------------------------------------------
+        |
+        | Declare a default view to be used by `AbstractMailable` extensions.
+        |
+        | type     : string
+        | default  : 'post-office::email'
+        |
+        */
+        'view' => env('POST_OFFICE_MAILABLE_VIEW', 'post-office::email'),
+    ],
 ];

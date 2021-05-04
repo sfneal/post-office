@@ -3,8 +3,10 @@
 namespace Sfneal\PostOffice\Tests;
 
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Queue;
 use Sfneal\PostOffice\MailCenter\SendMail;
 use Sfneal\PostOffice\Tests\Assets\InvoiceUnpaidMailable;
+use Sfneal\Tracking\Jobs\TrackActionJob;
 use Sfneal\Users\Models\User;
 
 class SendMailTest extends TestCase
@@ -62,14 +64,41 @@ class SendMailTest extends TestCase
     }
 
     /** @test */
-//    public function mail_can_be_queued()
-//    {
-//        // Send the mail
-//        SendMail::dispatch($this->user->email, $this->mailable);
-//
-//        // Assert that a mailable was sent...
-//        Mail::assertQueued(function (InvoiceUnpaidMailable $mailable) {
-//            return $mailable->email == $this->user->email;
-//        });
-//    }
+    public function mail_can_be_queued()
+    {
+        // Enable queue faking
+        Queue::fake();
+
+        // Assert that no jobs were pushed...
+        Queue::assertNothingPushed();
+
+        // Dispatch the first job...
+        Queue::push(new SendMail($this->user->email, $this->mailable));
+
+        // Assert a job was pushed...
+        Queue::assertPushed(function (SendMail $sender) {
+            return $sender->mailable === $this->mailable;
+        });
+    }
+
+    /** @test */
+    public function mail_can_be_queued_on_queue()
+    {
+        // Enable queue faking
+        Queue::fake();
+
+        // Assert that no jobs were pushed...
+        Queue::assertNothingPushed();
+
+        // Dispatch the first job...
+        Queue::pushOn(
+            config('post-office.queue'),
+            new SendMail($this->user->email, $this->mailable)
+        );
+
+        // Assert a job was pushed...
+        Queue::assertPushedOn(config('post-office.queue'), function (SendMail $sender) {
+            return $sender->mailable === $this->mailable;
+        });
+    }
 }

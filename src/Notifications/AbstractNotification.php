@@ -6,12 +6,11 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Bus\Queueable as QueueableTrait;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
-use Illuminate\Notifications\Notification;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Sfneal\PostOffice\Mailables\AbstractMailable;
 
-abstract class AbstractNotification extends Notification implements ShouldQueue
+abstract class AbstractNotification extends \Illuminate\Notifications\Notification implements ShouldQueue
 {
     use Queueable, InteractsWithQueue, QueueableTrait, SerializesModels;
 

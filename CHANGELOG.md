@@ -68,3 +68,7 @@ All notable changes to `post-office` will be documented in this file
 ## 0.7.3 - 2021-05-04
 - add 'footer' config values to 'post-office' config
 - add use of config values in 'email' blade
+
+
+## 0.7.4 - 2021-05-04
+- fix issues with use of 'post-office.mailables.footer' config

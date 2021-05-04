@@ -52,3 +52,9 @@ All notable changes to `post-office` will be documented in this file
 - bump min sfneal/users dev requirement to v0.11.3
 - make ServiceProvider that publishes config files & views
 - make test suite for testing Mailables, Notifications & SendMail jobs
+
+
+## 0.7.1 - 2021-05-04
+- add 'queue' & 'driver' keys to post-office config
+- add use of 'post-office.queue' & 'post-office.driver' queue values 
+- fix `PostOfficeServiceProvider` view publishing paths

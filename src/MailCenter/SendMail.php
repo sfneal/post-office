@@ -8,17 +8,6 @@ use Sfneal\Queueables\Job;
 
 class SendMail extends Job
 {
-    // todo: add use of config
-    /**
-     * @var string Queue to use
-     */
-    public $queue = 'mail';
-
-    /**
-     * @var string Queue connection to use
-     */
-    public $connection = 'database';
-
     /**
      * @var string Email address of recipient
      */
@@ -46,6 +35,9 @@ class SendMail extends Job
         $this->to = $to;
         $this->mailable = $mailable;
         $this->cc = $cc;
+
+        $this->onQueue(config('post-office.queue'));
+        $this->onConnection(config('post-office.driver'));
     }
 
     /**

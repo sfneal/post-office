@@ -31,9 +31,8 @@ abstract class AbstractNotification extends Notification implements ShouldQueue
     public function __construct()
     {
         $this->via = $this->via ?? ['mail'];
-        // todo: add use of config
-        $this->onQueue('mail');
-        $this->onConnection('database');
+        $this->onQueue(config('post-office.queue'));
+        $this->onConnection(config('post-office.driver'));
     }
 
     /**

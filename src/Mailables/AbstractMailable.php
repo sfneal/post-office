@@ -10,6 +10,7 @@ abstract class AbstractMailable extends BaseMailable
 {
     // todo: refactor to allow interfaces to set properties without passing to constructor
     // todo: refactor to use basic mailable building instead of views (new class?)
+    // todo: add use of config for setting default view
     use Queueable, SerializesModels;
 
     /**
@@ -66,9 +67,8 @@ abstract class AbstractMailable extends BaseMailable
         $this->call_to_action = $call_to_action ?? $this->call_to_action;
         $this->view = $view ?? $this->view;
 
-        // todo: use config values
-        $this->onQueue('mail');
-        $this->onConnection('database');
+        $this->onQueue(config('post-office.queue'));
+        $this->onConnection(config('post-office.driver'));
     }
 
     /**

@@ -55,7 +55,9 @@ class SendMailTest extends TestCase
     public function mail_can_be_sent()
     {
         // Send the mail
-        (new SendMail($this->user->email, $this->mailable))->handle();
+        $sent = (new SendMail($this->user->email, $this->mailable))->handle();
+
+        $this->assertTrue($sent);
 
         // Assert that a mailable was sent...
         Mail::assertSent(function (InvoiceUnpaidMailable $mailable) {

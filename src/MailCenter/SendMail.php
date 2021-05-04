@@ -43,14 +43,19 @@ class SendMail extends Job
     /**
      * Execute the job.
      *
-     * @return void
+     * @return bool
      */
-    public function handle()
+    public function handle(): bool
     {
-        // todo: add return?
-        if (! $this->send()) {
+        $sent = $this->send();
+
+        // Fail the Job if the mailable was not sent
+        if (! $sent) {
             $this->fail();
+            return false;
         }
+
+        return true;
     }
 
     /**
@@ -58,7 +63,7 @@ class SendMail extends Job
      *
      * @return bool
      */
-    private function send()
+    private function send(): bool
     {
         // Initialize
         $mail = Mail::to($this->to);

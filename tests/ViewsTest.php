@@ -36,7 +36,8 @@ class ViewsTest extends TestCase
         $this->mailable = new InvoiceUnpaidMailable($this->user, $this->invoice_id);
     }
 
-    public function test_a_welcome_view_can_be_rendered()
+    /** @test */
+    public function email_view_can_be_rendered()
     {
         $data = [
             'greeting' => $this->mailable->getGreeting(),

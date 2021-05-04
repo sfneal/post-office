@@ -54,7 +54,7 @@ All notable changes to `post-office` will be documented in this file
 - make test suite for testing Mailables, Notifications & SendMail jobs
 
 
-## 0.8.0 - 2021-05-04
+## 0.7.1 - 2021-05-04
 - add 'queue' & 'driver' keys to post-office config
 - add use of 'post-office.queue' & 'post-office.driver' queue values 
 - fix `PostOfficeServiceProvider` view publishing paths

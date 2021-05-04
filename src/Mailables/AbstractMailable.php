@@ -76,7 +76,7 @@ abstract class AbstractMailable extends BaseMailable
      *
      * @return $this
      */
-    public function build()
+    public function build(): self
     {
         return $this->subject($this->title)
             ->view($this->view, [

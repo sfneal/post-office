@@ -4,5 +4,9 @@ namespace Sfneal\PostOffice\Tests;
 
 class ConfigTest extends TestCase
 {
-    // todo: add test methods
+    /** @test */
+    public function config_is_accessible()
+    {
+        $this->assertIsArray(config('post-office'));
+    }
 }

@@ -16,11 +16,6 @@ class InvoiceUnpaidMailable extends AbstractMailable implements Greeting, Email,
     use UserMailable;
 
     /**
-     * @var string View blade to use for mailable content
-     */
-    public $view = 'post-office::email';
-
-    /**
      * @var User
      */
     private $user;

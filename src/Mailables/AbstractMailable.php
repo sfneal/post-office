@@ -65,7 +65,7 @@ abstract class AbstractMailable extends BaseMailable
         $this->title = $title ?? $this->title;
         $this->messages = $messages ?? $this->messages;
         $this->call_to_action = $call_to_action ?? $this->call_to_action;
-        $this->view = $view ?? $this->view;
+        $this->view = $this->setView($view);
 
         $this->onQueue(config('post-office.queue'));
         $this->onConnection(config('post-office.driver'));
@@ -86,5 +86,20 @@ abstract class AbstractMailable extends BaseMailable
                 'messages' => $this->messages,
                 'call_to_action' => $this->call_to_action,
             ]);
+    }
+
+    /**
+     * Set the Mailable's $view property.
+     *
+     *  1. $view parameter passed to the constructor
+     *  2. $view property declared in child `AbstractMailable` extension
+     *  3. 'post-office.mailable.view' config value (defaults to post-office::email)
+     *
+     * @param string|null $view
+     * @return string
+     */
+    private function setView(string $view = null): string
+    {
+        return $view ?? $this->view ?? config('post-office.mailables.view');
     }
 }

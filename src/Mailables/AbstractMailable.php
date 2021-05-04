@@ -65,8 +65,8 @@ abstract class AbstractMailable extends BaseMailable
         $this->title = $title ?? $this->title;
         $this->messages = $messages ?? $this->messages;
         $this->call_to_action = $call_to_action ?? $this->call_to_action;
-        $this->view = $this->setView($view);
 
+        $this->view = $this->setView($view);
         $this->onQueue(config('post-office.queue'));
         $this->onConnection(config('post-office.driver'));
     }

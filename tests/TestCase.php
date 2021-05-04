@@ -36,9 +36,9 @@ class TestCase extends \Orchestra\Testbench\TestCase
     {
         // Set config values
         $app['config']->set('app.debug', true);
-        $app['config']->set('post-office.footer.enabled', true);
-        $app['config']->set('post-office.footer.address', '35 Main Street, Milford MA 01747');
-        $app['config']->set('post-office.footer.unsubscribe_route', 'unsubscribe');
+        $app['config']->set('post-office.mailables.footer.enabled', true);
+        $app['config']->set('post-office.mailables.footer.address', '35 Main Street, Milford MA 01747');
+        $app['config']->set('post-office.mailables.footer.unsubscribe_route', 'unsubscribe');
 
         // Create mock 'unsubscribe' route
         Route::get('unsubscribe', function (string $email) {

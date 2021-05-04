@@ -88,9 +88,9 @@ class MailableTest extends TestCase
     public function mailable_has_footer()
     {
         $this->mailable->assertSeeInHtml('<div class="footer">');
-        $this->mailable->assertSeeInHtml(config('post-office.footer.address'));
+        $this->mailable->assertSeeInHtml(config('post-office.mailables.footer.address'));
         $this->mailable->assertSeeInHtml(route(
-            config('post-office.footer.unsubscribe_route'),
+            config('post-office.mailables.footer.unsubscribe_route'),
             ['email' => $this->user->email]
         ));
     }

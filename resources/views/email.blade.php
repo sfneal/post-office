@@ -35,18 +35,18 @@
                 </table>
 
                 {{-- Footer --}}
-                @if(config('post-office.footer.enabled'))
+                @if(config('post-office.mailables.footer.enabled'))
                     <div class="footer">
                         <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                             <tr>
                                 <td class="content-block">
-                                    @if(config('post-office.footer.address'))
-                                        <span class="apple-link">{{ config('post-office.footer.address') }}</span>
+                                    @if(config('post-office.mailables.footer.address'))
+                                        <span class="apple-link">{{ config('post-office.mailables.footer.address') }}</span>
                                     @endif
 
-                                    @if(config('post-office.footer.unsubscribe_route'))
+                                    @if(config('post-office.mailables.footer.unsubscribe_route'))
                                         <br> Don't like these emails?
-                                        <a href="{{ route(config('post-office.footer.unsubscribe_route'), ['email'=>$email]) }}">Unsubscribe</a>.
+                                        <a href="{{ route(config('post-office.mailables.footer.unsubscribe_route'), ['email'=>$email]) }}">Unsubscribe</a>.
                                     @endif
                                 </td>
                             </tr>

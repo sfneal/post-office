@@ -10,6 +10,7 @@ abstract class AbstractMailable extends BaseMailable
 {
     // todo: refactor to allow interfaces to set properties without passing to constructor
     // todo: refactor to use basic mailable building instead of views (new class?)
+    // todo: add use of config for setting default view
     use Queueable, SerializesModels;
 
     /**

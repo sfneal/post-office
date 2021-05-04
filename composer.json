@@ -15,14 +15,18 @@
             "role": "Developer"
         }
     ],
+    "version": "0.7.0",
     "require": {
-        "php": ">=7.1",
+        "php": ">=7.4",
         "illuminate/support": "*",
         "sfneal/queueables": "^2.0"
     },
     "require-dev": {
+        "orchestra/testbench": ">=6.7.1",
         "phpunit/phpunit": ">=6.5.14",
-        "scrutinizer/ocular": "^1.8"
+        "scrutinizer/ocular": "^1.8",
+        "sfneal/mock-models": "^0.5.0",
+        "sfneal/users": "^0.11.3"
     },
     "autoload": {
         "psr-4": {

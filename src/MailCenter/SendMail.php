@@ -8,6 +8,7 @@ use Sfneal\Queueables\Job;
 
 class SendMail extends Job
 {
+    // todo: add use of config
     /**
      * @var string Queue to use
      */
@@ -54,6 +55,7 @@ class SendMail extends Job
      */
     public function handle()
     {
+        // todo: add return?
         if (! $this->send()) {
             $this->fail();
         }

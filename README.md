@@ -18,6 +18,12 @@ You can install the package via composer:
 composer require sfneal/post-office
 ```
 
+To modify the post-office config file & views, publish the ServiceProvider with the following command.
+
+``` php
+php artisan vendor:publish --provider="Sfneal\PostOffice\Providers\PostOfficeServiceProvider"
+```
+
 ## Usage
 
 ``` php

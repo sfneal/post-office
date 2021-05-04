@@ -2,6 +2,8 @@
 
 All notable changes to `post-office` will be documented in this file
 
+**NOTICE**: remember to change the composer.json 'version' before publishing new releases
+
 ## 0.1.0 - 2020-08-19
 - initial release
 
@@ -43,3 +45,10 @@ All notable changes to `post-office` will be documented in this file
 ## 0.6.0 - 2021-04-05
 - cut support for php 7.0
 - bump min sfneal/queueables version to ^2.0
+
+
+## 0.7.0 - 2021-05-04
+- cut support for php 7.3 & below
+- bump min sfneal/users dev requirement to v0.11.3
+- make ServiceProvider that publishes config files & views
+- make test suite for testing Mailables, Notifications & SendMail jobs

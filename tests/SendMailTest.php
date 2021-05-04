@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Queue;
 use Sfneal\PostOffice\MailCenter\SendMail;
 use Sfneal\PostOffice\Tests\Assets\InvoiceUnpaidMailable;
-use Sfneal\Tracking\Jobs\TrackActionJob;
 use Sfneal\Users\Models\User;
 
 class SendMailTest extends TestCase

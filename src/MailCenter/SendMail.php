@@ -52,6 +52,7 @@ class SendMail extends Job
         // Fail the Job if the mailable was not sent
         if (! $sent) {
             $this->fail();
+
             return false;
         }
 

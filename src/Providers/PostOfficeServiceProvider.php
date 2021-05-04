@@ -23,7 +23,7 @@ class PostOfficeServiceProvider extends ServiceProvider
 
         // Publish Views
         $this->publishes([
-            __DIR__.'/../resources/views' => resource_path('views/vendor/sfneal/post-office'),
+            __DIR__.'/../../resources/views' => resource_path('views/vendor/sfneal/post-office'),
         ], 'views');
     }
 

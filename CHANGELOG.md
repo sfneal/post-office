@@ -56,4 +56,5 @@ All notable changes to `post-office` will be documented in this file
 
 ## 0.8.0 - 2021-05-04
 - add 'queue' & 'driver' keys to post-office config
-- add use of 'post-office.queue' & 'post-office.driver' queue values
+- add use of 'post-office.queue' & 'post-office.driver' queue values 
+- fix `PostOfficeServiceProvider` view publishing paths

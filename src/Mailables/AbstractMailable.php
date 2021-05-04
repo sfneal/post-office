@@ -21,17 +21,17 @@ abstract class AbstractMailable extends BaseMailable
     /**
      * @var string First line of the email body
      */
-    public $greeting = '';
+    public $greeting;
 
     /**
      * @var string Recipient email address
      */
-    public $email = '';
+    public $email;
 
     /**
      * @var string Subject of the email
      */
-    public $title = '';
+    public $title;
 
     /**
      * @var array|string Array of strings to be displayed as paragraphs

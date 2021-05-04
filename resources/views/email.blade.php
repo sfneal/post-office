@@ -45,7 +45,7 @@
                                     @endif
 
                                     @if(config('post-office.mailables.footer.unsubscribe_route'))
-                                        <br> Don't like these emails?
+                                        <br>Don't like these emails?
                                         <a href="{{ route(config('post-office.mailables.footer.unsubscribe_route'), ['email'=>$email]) }}">Unsubscribe</a>.
                                     @endif
                                 </td>

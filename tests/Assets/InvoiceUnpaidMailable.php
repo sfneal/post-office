@@ -2,16 +2,16 @@
 
 namespace Sfneal\PostOffice\Tests\Assets;
 
-use Sfneal\PostOffice\Mailables\AbstractMailable;
 use Sfneal\PostOffice\Mailables\Interfaces\CallToAction;
 use Sfneal\PostOffice\Mailables\Interfaces\Email;
 use Sfneal\PostOffice\Mailables\Interfaces\Greeting;
 use Sfneal\PostOffice\Mailables\Interfaces\Message;
 use Sfneal\PostOffice\Mailables\Interfaces\Title;
+use Sfneal\PostOffice\Mailables\Mailable;
 use Sfneal\PostOffice\Mailables\Traits\UserMailable;
 use Sfneal\Users\Models\User;
 
-class InvoiceUnpaidMailable extends AbstractMailable implements Greeting, Email, Title, Message, CallToAction
+class InvoiceUnpaidMailable extends Mailable implements Greeting, Email, Title, Message, CallToAction
 {
     use UserMailable;
 

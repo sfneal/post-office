@@ -3,7 +3,7 @@
 namespace Sfneal\PostOffice\Tests;
 
 use Illuminate\Support\Facades\Notification;
-use Sfneal\PostOffice\Notifications\AbstractNotification;
+use Sfneal\PostOffice\Notifications\Notification as SfnealNotification;
 use Sfneal\PostOffice\Tests\Assets\InvoiceUnpaidNotification;
 use Sfneal\Users\Models\User;
 
@@ -44,7 +44,7 @@ class NotificationTest extends TestCase
         $notification = new InvoiceUnpaidNotification($this->user, $this->invoice_id);
 
         $this->assertNotNull($notification);
-        $this->assertInstanceOf(AbstractNotification::class, $notification);
+        $this->assertInstanceOf(SfnealNotification::class, $notification);
         $this->assertInstanceOf(InvoiceUnpaidNotification::class, $notification);
     }
 

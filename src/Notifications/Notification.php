@@ -6,12 +6,11 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Bus\Queueable as QueueableTrait;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
-use Illuminate\Notifications\Notification;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use Sfneal\PostOffice\Mailables\AbstractMailable;
+use Sfneal\PostOffice\Mailables\Mailable;
 
-abstract class AbstractNotification extends Notification implements ShouldQueue
+abstract class Notification extends \Illuminate\Notifications\Notification implements ShouldQueue
 {
     use Queueable, InteractsWithQueue, QueueableTrait, SerializesModels;
 
@@ -50,7 +49,7 @@ abstract class AbstractNotification extends Notification implements ShouldQueue
      * Get the mail representation of the notification.
      *
      * @param  mixed  $notifiable
-     * @return MailMessage|AbstractMailable
+     * @return MailMessage|Mailable
      */
     abstract public function toMail($notifiable);
 

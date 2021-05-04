@@ -3,10 +3,9 @@
 namespace Sfneal\PostOffice\Mailables;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Mail\Mailable as BaseMailable;
 use Illuminate\Queue\SerializesModels;
 
-abstract class AbstractMailable extends BaseMailable
+abstract class Mailable extends \Illuminate\Mail\Mailable
 {
     // todo: refactor to allow interfaces to set properties without passing to constructor
     // todo: refactor to use basic mailable building instead of views (new class?)

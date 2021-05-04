@@ -2,7 +2,7 @@
 
 namespace Sfneal\PostOffice\Tests;
 
-use Sfneal\PostOffice\Mailables\AbstractMailable;
+use Sfneal\PostOffice\Mailables\Mailable;
 use Sfneal\PostOffice\Tests\Assets\InvoiceUnpaidMailable;
 use Sfneal\Users\Models\User;
 
@@ -41,7 +41,7 @@ class MailableTest extends TestCase
     public function mailable_was_created()
     {
         $this->assertNotNull($this->mailable);
-        $this->assertInstanceOf(AbstractMailable::class, $this->mailable);
+        $this->assertInstanceOf(Mailable::class, $this->mailable);
         $this->assertInstanceOf(InvoiceUnpaidMailable::class, $this->mailable);
     }
 

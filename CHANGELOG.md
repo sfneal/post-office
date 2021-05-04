@@ -72,3 +72,8 @@ All notable changes to `post-office` will be documented in this file
 
 ## 0.7.4 - 2021-05-04
 - fix issues with use of 'post-office.mailables.footer' config
+
+
+## 0.8.0 - 2021-05-04
+- refactor `AbstractMailable` to `Mailable` 
+- refactor `AbstractNotification` to `Notification`

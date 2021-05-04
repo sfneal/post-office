@@ -2,10 +2,10 @@
 
 namespace Sfneal\PostOffice\Tests\Assets;
 
-use Sfneal\PostOffice\Notifications\AbstractNotification;
+use Sfneal\PostOffice\Notifications\Notification;
 use Sfneal\Users\Models\User;
 
-class InvoiceUnpaidNotification extends AbstractNotification
+class InvoiceUnpaidNotification extends Notification
 {
     /**
      * @var User

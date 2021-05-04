@@ -54,6 +54,7 @@ class SendMail extends Job
      */
     public function handle()
     {
+        // todo: add return?
         if (! $this->send()) {
             $this->fail();
         }

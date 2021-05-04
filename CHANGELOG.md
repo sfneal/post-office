@@ -63,3 +63,8 @@ All notable changes to `post-office` will be documented in this file
 ## 0.7.2 - 2021-05-04
 - add 'post-office.mailables.view' config key for declaring a default mailables view
 - add `AbstractMailable::setView()` method for setting the $view property
+
+
+## 0.7.3 - 2021-05-04
+- add 'footer' config values to 'post-office' config
+- add use of config values in 'email' blade

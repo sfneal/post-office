@@ -35,18 +35,24 @@
                 </table>
 
                 {{-- Footer --}}
-                {{-- todo: add conditional --}}
-                <div class="footer">
-                    <table role="presentation" border="0" cellpadding="0" cellspacing="0">
-                        <tr>
-                            <td class="content-block">
-                                <span class="apple-link">35 Main Street, Milford MA 01747</span>
-                                <br> Don't like these emails?
-{{--                                <a href="{{ route('public.contact.unsubscribe', ['email'=>$email]) }}">Unsubscribe</a>.--}}
-                            </td>
-                        </tr>
-                    </table>
-                </div>
+                @if(config('post-office.footer.enabled'))
+                    <div class="footer">
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td class="content-block">
+                                    @if(config('post-office.footer.address'))
+                                        <span class="apple-link">{{ config('post-office.footer.address') }}</span>
+                                    @endif
+
+                                    @if(config('post-office.footer.unsubscribe_route'))
+                                        <br> Don't like these emails?
+                                        <a href="{{ route(config('post-office.footer.unsubscribe_route'), ['email'=>$email]) }}">Unsubscribe</a>.
+                                    @endif
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                @endif
             </div>
         </td>
         <td></td>

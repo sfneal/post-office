@@ -8,7 +8,7 @@
 
 Email suite for Laravel applications with extended Mailable & Notification functionality
 
-
+![Post Office](https://banners.beyondco.de/PostOffice.png?theme=dark&packageManager=composer+require&packageName=sfneal%2Fpost-office&pattern=connections&style=style_1&description=Email+suite+for+Laravel+applications+with+extended+Mailable+%26+Notification+functionality&md=1&showWatermark=1&fontSize=150px&images=mail-open&widths=auto)
 
 ## Installation
 

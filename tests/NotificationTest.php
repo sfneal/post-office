@@ -51,7 +51,16 @@ class NotificationTest extends TestCase
     /** @test */
     public function notification_was_sent()
     {
-        Notification::send($this->user, new InvoiceUnpaidNotification($this->user, $this->invoice_id));
+        (new InvoiceUnpaidNotification($this->user, $this->invoice_id))->send($this->user);
+        Notification::assertSentTo([$this->user], function (InvoiceUnpaidNotification $notification) {
+            return $notification->invoice_id == $this->invoice_id && $notification->user == $this->user;
+        });
+    }
+
+    /** @test */
+    public function notification_was_sent_now()
+    {
+        (new InvoiceUnpaidNotification($this->user, $this->invoice_id))->sendNow($this->user);
         Notification::assertSentTo([$this->user], function (InvoiceUnpaidNotification $notification) {
             return $notification->invoice_id == $this->invoice_id && $notification->user == $this->user;
         });

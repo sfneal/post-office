@@ -8,6 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Collection;
 use Sfneal\PostOffice\Mailables\Mailable;
 
 abstract class Notification extends \Illuminate\Notifications\Notification implements ShouldQueue
@@ -60,4 +61,24 @@ abstract class Notification extends \Illuminate\Notifications\Notification imple
      * @return array
      */
     abstract public function toArray($notifiable): array;
+
+    /**
+     * Send the Notification using the `Illuminate\Support\Facades\Notification` facade.
+     *
+     * @param Collection|array|mixed $notifiables
+     */
+    public function send($notifiables): void
+    {
+        \Illuminate\Support\Facades\Notification::send($notifiables, $this);
+    }
+
+    /**
+     * Send the Notification immediately using the `Illuminate\Support\Facades\Notification` facade.
+     *
+     * @param Collection|array|mixed $notifiables
+     */
+    public function sendNow($notifiables): void
+    {
+        \Illuminate\Support\Facades\Notification::sendNow($notifiables, $this);
+    }
 }

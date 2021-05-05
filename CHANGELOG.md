@@ -77,3 +77,10 @@ All notable changes to `post-office` will be documented in this file
 ## 0.8.0 - 2021-05-04
 - refactor `AbstractMailable` to `Mailable` 
 - refactor `AbstractNotification` to `Notification`
+
+
+## 1.0.0 - 2021-05-05
+- initial production release
+- add tests for testing 'post-office.mailables' & 'post-office.mailables.footer' config values
+- add `send()` & `sendNow()` methods to `Notification` so that notifications can be sent without importing the `Notification` facade
+- add usage instructions to the readme

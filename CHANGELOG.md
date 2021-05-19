@@ -84,3 +84,8 @@ All notable changes to `post-office` will be documented in this file
 - add tests for testing 'post-office.mailables' & 'post-office.mailables.footer' config values
 - add `send()` & `sendNow()` methods to `Notification` so that notifications can be sent without importing the `Notification` facade
 - add usage instructions to the readme
+
+
+## 1.0.1 - 2021-05-19
+- bump sfneal/users min version to v1.0
+- bump dev requirement phpunit/phpunit min version to v9.0.

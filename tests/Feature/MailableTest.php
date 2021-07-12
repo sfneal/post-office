@@ -1,9 +1,10 @@
 <?php
 
-namespace Sfneal\PostOffice\Tests;
+namespace Sfneal\PostOffice\Tests\Feature;
 
 use Sfneal\PostOffice\Mailables\Mailable;
 use Sfneal\PostOffice\Tests\Assets\InvoiceUnpaidMailable;
+use Sfneal\PostOffice\Tests\TestCase;
 use Sfneal\Users\Models\User;
 
 class MailableTest extends TestCase

@@ -1,10 +1,11 @@
 <?php
 
-namespace Sfneal\PostOffice\Tests;
+namespace Sfneal\PostOffice\Tests\Unit;
 
 use Illuminate\Support\Facades\Notification;
 use Sfneal\PostOffice\Notifications\Notification as SfnealNotification;
 use Sfneal\PostOffice\Tests\Assets\InvoiceUnpaidNotification;
+use Sfneal\PostOffice\Tests\TestCase;
 use Sfneal\Users\Models\User;
 
 class NotificationTest extends TestCase

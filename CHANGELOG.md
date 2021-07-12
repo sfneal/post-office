@@ -89,3 +89,8 @@ All notable changes to `post-office` will be documented in this file
 ## 1.0.1 - 2021-05-19
 - bump sfneal/users min version to v1.0
 - bump dev requirement phpunit/phpunit min version to v9.0
+
+
+## 1.0.2 - 2021-07-12
+- fix package version (in composer.json)
+- refactor test classes into `Unit` & `Feature` namespaces

@@ -1,11 +1,12 @@
 <?php
 
-namespace Sfneal\PostOffice\Tests;
+namespace Sfneal\PostOffice\Tests\Unit;
 
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Queue;
 use Sfneal\PostOffice\MailCenter\SendMail;
 use Sfneal\PostOffice\Tests\Assets\InvoiceUnpaidMailable;
+use Sfneal\PostOffice\Tests\TestCase;
 use Sfneal\Users\Models\User;
 
 class SendMailTest extends TestCase

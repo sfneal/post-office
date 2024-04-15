@@ -17,7 +17,7 @@
     ],
     "version": "1.1.0",
     "require": {
-        "php": ">=7.4",
+        "php": "^7.4|^8.1",
         "laravel/framework": "^8.83.27",
         "sfneal/queueables": "^2.0"
     },

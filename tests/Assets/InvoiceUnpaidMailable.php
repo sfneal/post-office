@@ -28,8 +28,8 @@ class InvoiceUnpaidMailable extends Mailable implements Greeting, Email, Title, 
     /**
      * InvoicePaidMailable constructor.
      *
-     * @param User $user
-     * @param int $invoice_id
+     * @param  User  $user
+     * @param  int  $invoice_id
      */
     public function __construct(User $user, int $invoice_id)
     {

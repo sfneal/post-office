@@ -45,5 +45,8 @@ jobs:
       - name: Install composer dependencies
         run: composer install
 
+      - name: Install Larastan
+        run: composer require nunomaduro/larastan:^2.0 --dev
+
       - name: Run Larastan static analysis
         run: ./vendor/bin/phpstan analyse --memory-limit=2G

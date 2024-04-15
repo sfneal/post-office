@@ -3,6 +3,7 @@
 namespace Sfneal\PostOffice\MailCenter;
 
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\SentMessage;
 use Illuminate\Support\Facades\Mail;
 use Sfneal\Queueables\Job;
 
@@ -75,9 +76,9 @@ class SendMail extends Job
         }
 
         // Send mail
-        $mail->send($this->mailable);
+        $sent = $mail->send($this->mailable);
 
         // Confirm Email was sent
-        return empty(Mail::failures());
+        return $sent instanceof SentMessage;
     }
 }

@@ -26,9 +26,9 @@ class SendMail extends Job
     /**
      * Create a new job instance.
      *
-     * @param string $to
-     * @param Mailable $mailable
-     * @param array|null $cc
+     * @param  string  $to
+     * @param  Mailable  $mailable
+     * @param  array|null  $cc
      */
     public function __construct(string $to, Mailable $mailable, array $cc = null)
     {

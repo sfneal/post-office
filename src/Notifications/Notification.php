@@ -65,7 +65,7 @@ abstract class Notification extends \Illuminate\Notifications\Notification imple
     /**
      * Send the Notification using the `Illuminate\Support\Facades\Notification` facade.
      *
-     * @param Collection|array|mixed $notifiables
+     * @param  Collection|array|mixed  $notifiables
      */
     public function send($notifiables): void
     {
@@ -75,7 +75,7 @@ abstract class Notification extends \Illuminate\Notifications\Notification imple
     /**
      * Send the Notification immediately using the `Illuminate\Support\Facades\Notification` facade.
      *
-     * @param Collection|array|mixed $notifiables
+     * @param  Collection|array|mixed  $notifiables
      */
     public function sendNow($notifiables): void
     {

@@ -20,8 +20,8 @@ class InvoiceUnpaidNotification extends Notification
     /**
      * InvoicePaidMailable constructor.
      *
-     * @param User $user
-     * @param int $invoice_id
+     * @param  User  $user
+     * @param  int  $invoice_id
      */
     public function __construct(User $user, int $invoice_id)
     {
@@ -33,7 +33,7 @@ class InvoiceUnpaidNotification extends Notification
     /**
      * Get the mail representation of the notification.
      *
-     * @param mixed $notifiable
+     * @param  mixed  $notifiable
      * @return InvoiceUnpaidMailable
      */
     public function toMail($notifiable): InvoiceUnpaidMailable
@@ -44,7 +44,7 @@ class InvoiceUnpaidNotification extends Notification
     /**
      * Get the array representation of the notification.
      *
-     * @param mixed $notifiable
+     * @param  mixed  $notifiable
      * @return array
      */
     public function toArray($notifiable): array

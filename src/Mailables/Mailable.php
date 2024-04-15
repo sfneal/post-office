@@ -44,12 +44,12 @@ abstract class Mailable extends \Illuminate\Mail\Mailable
     /**
      * Mailable constructor.
      *
-     * @param string|null $greeting
-     * @param string|null $email
-     * @param string|null $title
-     * @param null $messages
-     * @param array|null $call_to_action
-     * @param string|null $view
+     * @param  string|null  $greeting
+     * @param  string|null  $email
+     * @param  string|null  $title
+     * @param  null  $messages
+     * @param  array|null  $call_to_action
+     * @param  string|null  $view
      */
     public function __construct(string $greeting = null,
                                 string $email = null,
@@ -61,6 +61,7 @@ abstract class Mailable extends \Illuminate\Mail\Mailable
         $this->greeting = $greeting ?? $this->greeting;
         $this->email = $email ?? $this->email;
         $this->title = $title ?? $this->title;
+        /** @phpstan-ignore-next-line */
         $this->messages = $messages ?? $this->messages;
         $this->call_to_action = $call_to_action ?? $this->call_to_action;
 
@@ -93,7 +94,7 @@ abstract class Mailable extends \Illuminate\Mail\Mailable
      *  2. $view property declared in child `AbstractMailable` extension
      *  3. 'post-office.mailable.view' config value (defaults to post-office::email)
      *
-     * @param string|null $view
+     * @param  string|null  $view
      * @return string
      */
     private function setView(string $view = null): string

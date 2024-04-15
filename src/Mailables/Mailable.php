@@ -61,6 +61,7 @@ abstract class Mailable extends \Illuminate\Mail\Mailable
         $this->greeting = $greeting ?? $this->greeting;
         $this->email = $email ?? $this->email;
         $this->title = $title ?? $this->title;
+        /** @phpstan-ignore-next-line */
         $this->messages = $messages ?? $this->messages;
         $this->call_to_action = $call_to_action ?? $this->call_to_action;
 

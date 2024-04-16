@@ -103,3 +103,7 @@ All notable changes to `post-office` will be documented in this file
 
 ## 2.0.0 - 2024-04-15
 - add support for PHP 8.1
+
+
+## 2.1.0 - 2024-04-15
+- add support for PHP 8.2

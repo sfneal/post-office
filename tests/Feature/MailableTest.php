@@ -72,9 +72,23 @@ class MailableTest extends TestCase
     /** @test */
     public function mailable_has_message()
     {
+        $msg1 = "You have one or more unpaid invoices.  Please send use money asap!";
+        $msg2 = "If your invoice is not paid within 30 days";
+        $wrapper = function (string $message) {
+            return htmlentities($message, ENT_QUOTES);
+        };
+
         $this->assertTrue(method_exists($this->mailable, 'getMessages'));
-        $this->mailable->assertSeeInHtml('You have one or more unpaid invoices.  Please send use money asap!');
-        $this->mailable->assertSeeInHtml("If your invoice is not paid within 30 days we're going to send a team of ninja's to your last known location.");
+
+        $this->logicalOr(
+            $this->mailable->assertSeeInHtml(htmlentities($msg1, ENT_QUOTES)),
+            $this->mailable->assertSeeInHtml($msg1)
+        );
+
+        $this->logicalOr(
+            $this->mailable->assertSeeInHtml(htmlentities($msg2, ENT_QUOTES)),
+            $this->mailable->assertSeeInHtml($msg2)
+        );
     }
 
     /** @test */

@@ -72,8 +72,8 @@ class MailableTest extends TestCase
     /** @test */
     public function mailable_has_message()
     {
-        $msg1 = "You have one or more unpaid invoices.  Please send use money asap!";
-        $msg2 = "If your invoice is not paid within 30 days";
+        $msg1 = 'You have one or more unpaid invoices.  Please send use money asap!';
+        $msg2 = 'If your invoice is not paid within 30 days';
         $wrapper = function (string $message) {
             return htmlentities($message, ENT_QUOTES);
         };

@@ -15,7 +15,7 @@
             "role": "Developer"
         }
     ],
-    "version": "2.1.0",
+    "version": "2.2.0",
     "require": {
         "php": "^8.0|^8.1|^8.2|^8.3",
         "laravel/framework": "^8.75|^9.0|^10.0",

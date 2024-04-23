@@ -49,4 +49,9 @@ class TestCase extends \Orchestra\Testbench\TestCase
         include_once __DIR__.'/../vendor/sfneal/users/database/migrations/create_user_table.php.stub';
         (new \CreateUserTable())->up();
     }
+
+    public function seed($class = 'DatabaseSeeder')
+    {
+        // TODO: Implement seed() method.
+    }
 }

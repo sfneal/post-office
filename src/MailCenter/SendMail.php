@@ -78,6 +78,6 @@ class SendMail extends Job
         $mail->send($this->mailable);
 
         // Confirm Email was sent
-        return empty(Mail::failures());
+        return Mail::hasSent($this->mailable);
     }
 }

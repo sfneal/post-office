@@ -18,7 +18,7 @@
     "version": "2.1.0",
     "require": {
         "php": "^8.0|^8.1|^8.2|^8.3",
-        "laravel/framework": "^8.75|^9.0",
+        "laravel/framework": "^8.75|^9.0|^10.0",
         "sfneal/queueables": "^2.0"
     },
     "require-dev": {
@@ -40,6 +40,7 @@
     },
     "scripts": {
         "test": "vendor/bin/phpunit",
+        "test-dox": "vendor/bin/phpunit --testdox",
         "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
         "docker-build": "bash scripts/build.sh ''",
         "docker-build-lowest": "bash scripts/build.sh --prefer-lowest",

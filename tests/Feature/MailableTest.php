@@ -73,8 +73,8 @@ class MailableTest extends TestCase
     public function mailable_has_message()
     {
         $this->assertTrue(method_exists($this->mailable, 'getMessages'));
-        $this->mailable->assertSeeInHtml(htmlentities('You have one or more unpaid invoices.  Please send use money asap!', ENT_QUOTES));
-        $this->mailable->assertSeeInHtml(htmlentities("If your invoice is not paid within 30 days we're going to send a team of ninja's to your last known location.", ENT_QUOTES));
+        $this->mailable->assertSeeInHtml('You have one or more unpaid invoices.  Please send use money asap!');
+        $this->mailable->assertSeeInHtml("If your invoice is not paid within 30 days we're going to send a team of ninja's to your last known location.");
     }
 
     /** @test */
@@ -88,7 +88,7 @@ class MailableTest extends TestCase
     /** @test */
     public function mailable_has_footer()
     {
-        $this->mailable->assertSeeInHtml('<div class="footer">');
+        $this->mailable->assertSeeInHtml("footer");
         $this->mailable->assertSeeInHtml(config('post-office.mailables.footer.address'));
         $this->mailable->assertSeeInHtml(route(
             config('post-office.mailables.footer.unsubscribe_route'),

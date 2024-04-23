@@ -22,11 +22,12 @@ WORKDIR /var/www
 COPY --from=composer /var/www .
 
 # Copy Package source
-COPY config  /var/www/config/
-COPY src  /var/www/src/
-COPY tests  /var/www/tests/
+COPY config /var/www/config/
+COPY resources /var/www/resources/
+COPY src /var/www/src/
+COPY tests /var/www/tests/
 
 # Install composer dependencies
 RUN composer dump-autoload
 
-ENTRYPOINT ["vendor/bin/phpunit"]
+ENTRYPOINT ["vendor/bin/phpunit", "--testdox"]

@@ -1,0 +1,28 @@
+name: Docker Builds
+
+on:
+    push:
+        branches:
+            - master
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        strategy:
+            fail-fast: false
+            matrix:
+                os: [ ubuntu-latest ]
+                php: [8.0, 8.1, 8.2, 8.3]
+                composer-test: [docker-test, docker-test-lowest]
+
+        name: PHP${{ matrix.php }} - ${{ matrix.composer-test }}
+
+        steps:
+            -   name: Checkout code
+                uses: actions/checkout@v4
+
+            -   name: Pull Docker Images
+                run: docker compose pull --ignore-pull-failures
+
+            -   name: Test Docker Images
+                run: composer ${{ matrix.composer-test }} ${{ matrix.php }}

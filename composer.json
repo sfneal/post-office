@@ -42,6 +42,13 @@
         "test": "vendor/bin/phpunit",
         "test-dox": "vendor/bin/phpunit --testdox",
         "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "docker-build": "bash scripts/build.sh ''",
+        "docker-build-lowest": "bash scripts/build.sh --prefer-lowest",
+        "docker-test": "bash scripts/boot.sh ''",
+        "docker-test-lowest": "bash scripts/boot.sh --prefer-lowest",
+        "docker-test-build": "composer docker-build",
+        "docker-test-lowest-build": "composer docker-build-lowest",
+        "docker-down": "docker-compose down -v --remove-orphans",
         "upload-coverage": "php vendor/bin/ocular code-coverage:upload --format=php-clover phpunit.xml.dist",
         "update-test": "composer --prefer-stable update && composer test && composer update --prefer-lowest && composer test && composer update"
     },

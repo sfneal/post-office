@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+    post-office:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: "stephenneal/post-office:latest"
+        container_name: post-office
+        tty: true
+        volumes:
+            - post-office:/var/www
+        depends_on:
+            - post-office-cache
+        networks:
+            - post-office-network
+
+    post-office-cache:
+        container_name: post-office-cache
+        image: redis:6-alpine
+        command: ["redis-server", "--appendonly yes", "--port 9736"]
+        ports:
+            - "9736:9736"
+        volumes:
+            - post-office-cache:/data
+        networks:
+            - post-office-network
+
+
+# Networks
+networks:
+    post-office-network:
+        driver: bridge
+
+# Volumes
+volumes:
+    post-office:
+    post-office-cache:

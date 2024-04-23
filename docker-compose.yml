@@ -6,7 +6,6 @@ services:
             context: .
             dockerfile: Dockerfile
         image: "stephenneal/post-office:latest"
-        env_file: .env.docker
         container_name: post-office
         tty: true
         volumes:

@@ -51,12 +51,12 @@ abstract class Mailable extends \Illuminate\Mail\Mailable
      * @param  array|null  $call_to_action
      * @param  string|null  $view
      */
-    public function __construct(string $greeting = null,
-                                string $email = null,
-                                string $title = null,
+    public function __construct(?string $greeting = null,
+                                ?string $email = null,
+                                ?string $title = null,
                                 $messages = null,
-                                array $call_to_action = null,
-                                string $view = null)
+                                ?array $call_to_action = null,
+                                ?string $view = null)
     {
         $this->greeting = $greeting ?? $this->greeting;
         $this->email = $email ?? $this->email;
@@ -97,7 +97,7 @@ abstract class Mailable extends \Illuminate\Mail\Mailable
      * @param  string|null  $view
      * @return string
      */
-    private function setView(string $view = null): string
+    private function setView(?string $view = null): string
     {
         return $view ?? $this->view ?? config('post-office.mailables.view');
     }

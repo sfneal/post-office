@@ -30,7 +30,7 @@ class SendMail extends Job
      * @param  Mailable  $mailable
      * @param  array|null  $cc
      */
-    public function __construct(string $to, Mailable $mailable, array $cc = null)
+    public function __construct(string $to, Mailable $mailable, ?array $cc = null)
     {
         $this->to = $to;
         $this->mailable = $mailable;
